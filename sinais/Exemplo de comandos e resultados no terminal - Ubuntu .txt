@@ -1,0 +1,28 @@
+Terminal 1:
+
+./recebedor blocking
+Processo Recebedor iniciado. PID: 95172
+Modo de espera configurado: blocking
+Aguardando sinais... (Envie 10 para SIGUSR1, 12 para SIGUSR2, 15 para SIGTERM)
+Entrando em espera bloqueante (CPU ociosa)...
+
+[Handler] Sinal SIGUSR1 (10) recebido! Executando rotina 1...
+
+[Handler] Sinal SIGUSR2 (12) recebido! Executando rotina 2...
+
+[Handler] Sinal SIGTERM (15) recebido! Encerrando o processo...
+
+
+
+Terminal 2: 
+
+./enviador 999999 10
+Erro: O processo 999999 não existe.
+
+./enviador 95172 10
+Sinal 10 enviado com sucesso para o processo 95172.
+
+./enviador 95172 12
+Sinal 12 enviado com sucesso para o processo 95172.
+
+kill -15 95172
